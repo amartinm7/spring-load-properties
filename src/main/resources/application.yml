@@ -1,0 +1,43 @@
+#/api/?key=7104350-0a2ce7523574d82110e80561e&q=yellow+flowers&image_type=photo
+
+spring:
+  profiles:
+    active: "developer"
+  main:
+    banner-mode: "off"
+  mustache:
+    expose-request-attributes: true
+
+---
+
+spring:
+  profiles: developer
+configurationSpace:
+  prop1: xxx
+  prop2: yyy
+  prop3: zzz
+  prop4: www
+externalApi:
+  application:
+  - name: pixabay
+    domain: https://pixabay.com
+    methods:
+      - name: getPhotos
+        path: /api/?key={id}&q=yellow+flowers&image_type=photo
+
+---
+
+spring:
+  profiles: dev
+configurationSpace:
+  prop1: xxx
+  prop2: yyy
+  prop3: zzz
+  prop4: www
+externalApi:
+  application:
+  - name: pixabay
+    domain: https://pixabay.com
+    methods:
+      - name: getPhotos
+        path: /api/?key={id}&q=yellow+flowers&image_type=photo
