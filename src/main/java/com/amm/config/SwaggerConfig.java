@@ -38,21 +38,22 @@ public class SwaggerConfig {
                 //.paths(PathSelectors.any())
                 .paths(regex("/api.*"))
                 .build()
-                .apiInfo(metaData());
+                //.apiInfo(metaData());//TODO fix
+                .apiInfo(null);
     }
 
-    /**
-     * Gets the meta data.
-     * @return api info
-     */
-    private ApiInfo metaData() {
-        logger.debug("Loading Swagger2 API info...");
-        return new ApiInfo("pixabay Rest API",
-                            "pixabay Rest API",
-                            "1.0",
-                            "Terms of service",
-                            new Contact("pixabay Team", "https://github.com/amartinm7/spring-load-properties", "amartinm7@gmail.com"),
-                            "Apache License Version 2.0",
-                            "https://www.apache.org/licenses/LICENSE-2.0");
-    }
+//    /**
+//     * Gets the meta data.
+//     * @return api info
+//     */
+//    private ApiInfo metaData() {
+//        logger.debug("Loading Swagger2 API info...");
+//        return new ApiInfo("pixabay Rest API",
+//                            "pixabay Rest API",
+//                            "1.0",
+//                            "Terms of service",
+//                            new Contact("pixabay Team", "https://github.com/amartinm7/spring-load-properties", "amartinm7@gmail.com"),
+//                            "Apache License Version 2.0",
+//                            "https://www.apache.org/licenses/LICENSE-2.0");
+//    }
 }
