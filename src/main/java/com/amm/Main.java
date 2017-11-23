@@ -1,13 +1,10 @@
 package com.amm;
 
-import com.zooplus.shop.uxt.commons.base.model.SpaceSettings;
-import com.zooplus.shop.uxt.commons.base.service.SpaceSettingsService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
@@ -34,28 +31,6 @@ public class Main {
         logger.info("Starting uxt-side-banner...");
         SpringApplication app = new SpringApplication(Main.class);
         app.run(args);
-    }
-
-    /**
-     * Adds the {@link SpaceSettings} to the context.
-     *
-     * @return space settings
-     */
-    @ConfigurationProperties(prefix = "configurationSpace")
-    @Bean(name = "configurationSpaceSettings")
-    public SpaceSettings configurationSpaceSettings() {
-        return new SpaceSettings();
-    }
-
-
-    /**
-     * Adds the {@link SpaceSettingsService} to the context.
-     *
-     * @return SpaceSettingsService
-     */
-    @Bean
-    public SpaceSettingsService spaceSettingsService() {
-        return new SpaceSettingsService();
     }
 
     /**
