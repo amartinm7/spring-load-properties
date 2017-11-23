@@ -1,7 +1,19 @@
 [![Deploy](https://stash.zooplus.de/projects/CONT/avatar.png?s=96)](https://stash.zooplus.de/projects/CONT/repos/uxt-side-banner/browse)
 
-# Pixabay proof of concept
-this is the project to host the functionality to the banner component
+# Springboot load properties
+
+install Maven
+
+> brew install maven
+
+create a maven project
+
+> mvn -B archetype:generate \
+  -DarchetypeGroupId=org.apache.maven.archetypes \
+  -DgroupId=com.amm \
+  -DartifactId=loadproperties
+
+run the next commmands
 
 > mvn compile package
 
@@ -23,4 +35,3 @@ https://spring.io/guides/gs/rest-service/
 
 Swagger
 http://uxt-side-banner.dev.zooplus.net/swagger-ui.html
-
