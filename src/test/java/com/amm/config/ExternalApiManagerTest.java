@@ -28,12 +28,15 @@ public class ExternalApiManagerTest {
 
     @Test
     public void loadProperties(){
-        final String expectedURL = "https://pixabay.com/api/?key=7104350-0a2ce7523574d82110e80561e&q=yellow+flowers&image_type=photo";
+        //given
+        final String expectedURL = "https://pixabay.com/api/?key=17104350-0a2ce7523574d82110e80561e&q=yellow+flowers&image_type=photo";
         logger.info(">>>loadProperties...");
-        Assert.assertNotNull(externalApiManager.toString());
+        //when
         final Map<String,String> pathParamsMap = new HashMap<>();
         pathParamsMap.put("{id}","17104350-0a2ce7523574d82110e80561e");
         final String obtainedURL = externalApiManager.getURL("pixabay", "getPhotos",pathParamsMap);
+        //then
+        Assert.assertNotNull(externalApiManager.toString());
         Assert.assertNotNull(obtainedURL);
         Assert.assertEquals(expectedURL,obtainedURL);
         logger.info(">>>Pixabay url '{}'",obtainedURL);
