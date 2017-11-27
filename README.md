@@ -15,11 +15,13 @@ create a maven project
 
 run the next commmands
 
-> mvn compile package
+> mvn clean compile package
 
 > mvn docker:build
 
 > mvn spring-boot:run
+
+> mvn clean package spring-boot:run
 
 # Remote debug
 
